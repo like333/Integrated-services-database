@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>检测中心数据库</title>
+		<!--权限管理--订单管理-->
+		<!-- Bootstrap CSS -->
+		<link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../../bootstrap/css/bootstrap-select.min.css" rel="stylesheet" />
+		
+			
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="../../css/publicStyle.css"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="../../css/TestCenter/style.css" rel="stylesheet">
+		<link rel="stylesheet" href="../../bootstrap/css/bootstrap-editable.css">
+		<link href="../../bootstrap/css/bootstrap-table.css" media="all" rel="stylesheet" type="text/css" />
+		<!--<link href="../../css/TestCenter/file.css" rel="stylesheet" />-->
+		<script src="../../bootstrap/js/jquery-3.1.1.min.js"></script>
+		<script src="../../bootstrap/js/bootstrap.min.js"></script>
+		<script src="../../bootstrap/js/bootstrap-table-zh-CN.js"></script>
+		<script src="../../bootstrap/js/bootstrap-table.js"></script>
+		<script src="../../bootstrap/js/bootstrap-table-export.js"></script>
+		 <script src="../../bootstrap/js/bootstrap-table-editable.js"></script>
+    <script src="../../bootstrap/js/bootstrap-editable.js"></script>
+		<script src="../../bootstrap/js/bootstrap-select.min.js"></script>
+    
+		<!--[if lt IE 9]>  
+            <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>  
+            <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>  
+        <![endif]-->
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<!--nav-start-->
+			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse"data-target="#example-navbar-collapse">
+					        <span class="sr-only">Toggle navigation</span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+					    </button>
+						<a class="navbar-brand" href="#"><img src="../../image/test/Testtitle.png" /></a>
+					</div>
+					<!--user-->
+					<ul class="nav navbar-nav navbar-right hidden-xs">
+						<li class="dropdown user">
+							<a href="#" class="dropdown-toggle user" data-toggle="dropdown">
+								<i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>Admin <b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="#"><i class="fa fa-sign-out fa-fw"></i>退出</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<!--nav-end-->
+			<!--sidebar-start-->
+			 <div class="collapse navbar-collapse" id="example-navbar-collapse">
+			 	<ul class="nav navbar-nav">
+			 		<li>
+						<div class="panel-group  sidebar" id="accordion">
+							<!--浏览查询-->
+							<div class="panel ">
+								<div class="panel-heading">
+									<h4 class="panel-title single">
+			       						 <a href="index.html"><img src="../../image/test/brower.png">浏览查询</a>
+			      					</h4>
+								</div>
+							</div>
+							<!--数据统计-->
+							<div class="panel ">
+								<div class="panel-heading">
+									<h4 class="panel-title single">
+			        					<a href="dataStatistics.html">
+			        						<img src="../../image/test/tongji.png">数据统计</a>
+			     					 </h4>
+								</div>
+							</div>
+							<!--文件管理-->
+							<div class="panel ">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+			        					<a data-toggle="collapse" data-parent="#accordion" href="#dataMange">
+			        						<img src="../../image/test/dataMange.png">文件管理<i class="fa  fa-angle-down  fa-lg pull-right" aria-hidden="true"></i></a>
+			      					</h4>
+								</div>
+								<div id="dataMange" class="panel-collapse collapse">
+									<ul class="panel-body">
+										<li><a href="fileMange.html">文档管理</a></li>	
+										<li><a href="picMange.html">图片管理</a></li>	
+									</ul>
+								</div>
+							</div>
+							<!--订单管理-->
+							<div class="panel ">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+			        					<a data-toggle="collapse" data-parent="#accordion" href="#orderMange">
+			        						<img src="../../image/test/orderMange.png">订单管理<i class="fa  fa-angle-down  fa-lg pull-right" aria-hidden="true"></i>		
+			        					</a>
+			      					</h4>
+								</div>
+								<div id="orderMange" class="panel-collapse collapse in">
+									<ul class="panel-body">
+										<li><a href="orderTemple.html">订单模板管理</a></li>
+										<li><a href="priceMange.html">价格管理</a></li>
+										<li class="active"><a href="orderMange.html">待处理订单</a></li>
+										<li><a href="#">订单查询</a></li>
+										<li><a href="#">报告领取</a></li>
+									</ul>
+								</div>
+								</div>
+							<!--权限管理-->
+							<div class="panel">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+				    						<a data-toggle="collapse" data-parent="#accordion" href="#sysMange">
+												<img src="../../image/test/sysMange.png">权限管理<i class="fa  fa-angle-down  fa-lg pull-right" aria-hidden="true"></i>        					</a>
+				  						</h4>
+									</div>
+									<div id="sysMange" class="panel-collapse collapse">
+										<ul class="panel-body">
+											<li><a href="AdminAuthority.html">管理员权限管理</a></li>
+											<li><a href="staffAuthority.html">员工权限管理</a></li>
+											<li><a href="userAuthority.html">用户权限管理</a></li>					
+										</ul>
+									</div>
+								</div>
+						</div>
+					</li>
+			 	</ul>
+			 </div>
+			<!--sidebar-end-->
+			<!--start-->			
+			<div class="container-fluid">
+				<!--main-begin-->
+				<div id="main">
+					<div class="box search">
+						<div class="row">								
+							<!--搜索框-->
+							<div class="col-md-6 col-xs-6 col-lg-3">
+								<div class="input-group">
+									<input type="text" class="form-control" placeholder="输入搜索内容"/>
+									<span class="input-group-btn">
+										<button class="btn btn-success" type="button">搜索</button>
+									</span>
+								</div>
+							</div>
+							<!--高级搜索按钮-->
+							<div class="col-md-2 col-xs-2">
+								<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#search">高级搜索</button>										
+							</div>
+						</div>
+						<!--高级搜索列表-->
+						<div class="row">
+							<div class="collapse col-md-12" id="search">
+								<form class="form-inline" role="form">
+								  <div class="form-group">
+								    <label>订单号：</label>
+								    <input type="text" class="form-control" placeholder="订单号">
+								  </div>
+								  <div class="form-group">
+								     <label>成交时间：</label>
+								    <input type="姓名：" class="form-control" placeholder="成交时间：">
+								  </div>
+								  <div class="form-group">
+								     <label>是否加急：</label>
+								    <input type="姓名：" class="form-control" placeholder="部门">
+								  </div>
+								  
+								  <button type="submit" class="btn btn-primary">搜 素</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				<!--文件列表-->
+					<div class="row">
+						<div class="col-md-12">
+							<!--表格-->
+							<div id="tb" class="box">
+								<div class="toolbar pull-left">
+									    <label>订单状态：</label>
+										<select class="selectpicker show-tick"  data-size="7">
+											<option>已付款未受理</option>
+											<option>已受理</option>
+											<option>未付款</option>
+										</select>
+								<button type="button" data-toggle="modal" data-target="#edit" style="margin-left: 10px;" class="btn btn-primary"><i class="fa fa-fw fa-hand-paper-o" aria-hidden="true"></i>受理订单</button>						
+										
+								</div>
+								<table 
+									data-toggle="table"  
+									data-show-columns="true" 
+									data-height="500" 
+									data-toolbar="#toolbar"
+									data-classes="table table-hover table-condensed" 
+									data-striped="true" 
+									data-sort-name="stargazers_count" 
+									data-sort-order="desc" 
+									data-url="">
+									<thead>
+										<tr class="header">
+											<th data-field="state" data-checkbox="true"></th>
+											<th data-sortable="true">订单号</th>
+											<th data-sortable="true">成交时间</th>
+											<th data-sortable="true">检测类型</th>
+											<th data-sortable="true">样品数量</th>
+											<th data-sortable="true">加急</th>
+											<th data-sortable="true" data-editable="true">折扣</th>
+											<th data-sortable="true">总价</th>
+											<th data-sortable="true">订单状态</th>
+											<th>详情</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="info">
+											<td data-field="state" data-checkbox="true"></td>
+											<td>012</td>
+											<td>2017-01-11</td>
+											<td>土壤样品</td>
+											<td>20</td>
+											<td>否</td>
+											<td>100%</td>
+											<td>500</td>
+											<td>已付款未处理</td>
+											<td><a class="detail" data-toggle="modal" data-target="#detail">查看</a></td>
+										</tr>
+										<tr class="warning">
+											<td data-field="state" data-checkbox="true"></td>
+											<td>113</td>
+											<td>2017-01-10</td>
+											<td>水样品</td>
+											<td>30</td>
+											<td>否</td>
+											<td>100%</td>
+											<td>600</td>
+											<td>待付款</td>
+											<td><a class="detail" data-toggle="modal" data-target="#detail"</a>查看</td>
+										</tr>
+										<tr class="success">
+											<td data-field="state" data-checkbox="true"></td>
+											<td>114</td>
+											<td>2017-01-10</td>
+											<td>水样品</td>
+											<td>30</td>
+											<td>否</td>
+											<td>100%</td>
+											<td>600</td>
+											<td>已处理</td>
+											<td><a class="detail" data-toggle="modal" data-target="#detail">查看</a></td>
+										</tr>
+									</tbody>
+								</table>
+							<!--分页-->
+								<div class="row">
+									<div class="col-md-offset-5 col-md-4">
+										<ul class="pagination">
+										    <li><a href="#">&laquo;</a></li>
+										    <li class="active"><a href="#">1</a></li>
+										    <li class="disabled"><a href="#">2</a></li>
+										    <li><a href="#">3</a></li>
+										    <li><a href="#">4</a></li>
+										    <li><a href="#">5</a></li>
+										    <li><a href="#">&raquo;</a></li>
+										</ul>
+									</div>
+								</div>
+							<!--分页结束-->
+							</div>
+							<!--表格结束-->
+						</div>
+					</div>
+				</div>
+				<!--main-end-->
+			</div>
+			<!--end-->
+		</div>
+	<!--修改start-->
+			<div class="modal fade" id="detail" tabindex="-1" role="dialog" aria-labelledby="detail" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h4 class="modal-title" id="myModalLabel">订单详情</h4>
+					</div>
+					<div class="modal-body">
+						<div class="modalBody">
+							<table class="table table-no-bordered">
+								<tr>
+									<td><label for="username">订单号：</label></td>
+									<td> 
+										012
+									</td>
+									<td><label for="psw">成交时间：</label></td>
+									<td> 2017-01-11</td>
+									<td><label for="name">检测类型：</label></td>
+									<td> 
+										土壤样品
+									</td>
+								</tr>
+								<tr>
+									<td><label >样品数量：</label></td>
+									<td>30</td>
+									<td><label >加急：</label></td>
+									<td>否</td>
+									<td><label >折扣：</label></td>
+									<td>100%</td>
+								</tr>
+								<tr>
+									<td><label for="birthday">总价：</label></td>
+									<td> 500</td>
+									<td><label for="tel">订单状态：</label></td>
+									<td>已付款</td>
+									<td colspan="2"></td>
+								</tr>
+								<tr>
+									<td><label for="username">单位/项目名称：</label></td>
+									<td> 
+										012
+									</td>
+									<td><label for="psw">联系人：</label></td>
+									<td> 2017-01-11</td>
+									<td><label for="name">是否为对内样品：</label></td>
+									<td> 
+										土壤样品
+									</td>
+								</tr>
+								<tr>
+									<td><label >地址：</label></td>
+									<td>30</td>
+									<td><label >联系电话：</label></td>
+									<td>否</td>
+									<td><label >邮编：</label></td>
+									<td>100%</td>
+								</tr>
+								<tr>
+									<td><label>E-mail：</label></td>
+									<td>30</td>
+									<td><label>QQ：</label></td>
+									<td>否</td>
+									<td><label>样品类型：</label></td>
+									<td>100%</td>
+								</tr>
+							<tr>
+									<td><label for="sex">是否加急：</label></td>
+									<td>30</td>
+									<td><label for="sex">样品状态：</label></td>
+									<td>否</td>
+									<td><label for="sex">样品编辑区号：</label></td>
+									<td>100%</td>
+								</tr>
+								<tr>
+									<td><label for="sex">报告发送方式：</label></td>
+									<td>30</td>
+									<td><label for="sex">联系电话：</label></td>
+									<td>否</td>
+									<td><label for="sex">是否开具发票：</label></td>
+									<td>100%</td>
+								</tr>
+								<tr>
+									<td><label for="sex">委托人：</label></td>
+									<td>30</td>
+									<td><label for="sex">备注：</label></td>
+									<td>否</td>
+									<td colspan="2"></td>
+								</tr>
+								<tr> 
+								<td rowspan="2">备注:</td>
+								<td colspan="5" rowspan="2"></td></tr>
+							</table>				
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">取 消</button>
+						<button type="button" class="btn btn-default">清 空</button>
+						<button type="button" class="btn btn-primary">保 存</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--修改end-->
+	<!--修改start-->
+			<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h4 class="modal-title" id="myModalLabel">修改</h4>
+					</div>
+					<div class="modal-body">
+						<div class="modalBody">
+							<table class="table table-no-bordered">
+								<tr>
+									<td><label for="username">用户名：</label></td>
+									<td> 
+										<input type="text" id="username" class="form-control"/>
+									</td>
+									<td><label for="psw">密码：</label></td>
+									<td> <input type="text" id="psw" class="form-control"/></td>
+								</tr>
+								<tr>
+									<td><label for="name">姓名：</label></td>
+									<td> 
+										<input type="text" id="name" class="form-control"/>
+									</td>
+									<td><label >性别：</label></td>
+									<td> <input type="text" id="sex" class="form-control"/></td>
+								</tr>
+								<tr>
+									<td><label for="birthday">生日：</label></td>
+									<td> 
+										<input type="text" id="birthday" class="form-control"/>
+									</td>
+									<td><label for="tel">手机号：</label></td>
+									<td> <input type="text" id="tel" class="form-control"/></td>
+								</tr>
+								<tr>
+									<td><label for="phone">部门电话：</label></td>
+									<td> 
+										<input type="text" id="phone" class="form-control"/>
+									</td>
+									<td><label for="department">所在部门：</label></td>
+									<td> <input type="text" id="department" class="form-control"/></td>
+								</tr>
+								<tr>
+									<td><label for="post">职务：</label></td>
+									<td> 
+										<input type="text" id="post" class="form-control"/>
+									</td>
+									<td><label for="mail">邮箱：</label></td>
+									<td> <input type="email" id="mail" class="form-control"/></td>
+								</tr>
+							</table>				
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">取 消</button>
+						<button type="button" class="btn btn-default">清 空</button>
+						<button type="button" class="btn btn-primary">保 存</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--修改end-->
+		<!-- Del Modal -->
+		<div class="modal fade" id="del" tabindex="-1" role="dialog" aria-labelledby="del" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h4 class="modal-title" id="myModalLabel">提示</h4>
+					</div>
+					<div class="modal-body">
+						<h4>确定要删除吗？</h4>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">取 消</button>
+						<button type="button" class="btn btn-primary">确 定</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../../bootstrap/js/jquery-ui.min.js"></script><!--模态框拖动-->
+		
+		<script>
+		//模态框拖动
+				$(document).ready(function(){
+				        $(".modal").draggable({
+				        	handle:".modal-header",
+							cursor:'move',
+				        });//为模态对话框添加拖拽
+				        $(".modal").css("overflow", "hidden");//禁止模态对话框的半透明背景滚动
+				
+				})
+				</script>
+	</body>
+</html>

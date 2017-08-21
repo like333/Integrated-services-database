@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>办公数据库</title>
+		<!--档案管理-->
+		<!-- Bootstrap CSS -->
+		<link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Custom CSS -->
+		<link href="../../css/office/resultShow.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- Bootstrap CSS -->
+		<link href="../../bootstrap/css/bootstrap-table.css" media="all" rel="stylesheet" type="text/css" />
+		<link href="../../bootstrap/css/bootstrap-select.min.css" rel="stylesheet" />
+		<script src="../../bootstrap/js/jquery-3.1.1.min.js"></script>
+		<script src="../../bootstrap/js/bootstrap.min.js"></script>
+		<script src="../../bootstrap/js/bootstrap-table.js"></script>
+		<script src="../../bootstrap/js/bootstrap-table-export.js"></script>
+		<script src="../../bootstrap/js/bootstrap-select.min.js"></script>
+		<!--[if lt IE 9]>  
+            <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>  
+            <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>  
+        <![endif]-->
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<!--一级菜单-->
+			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-nav">
+						 <span class="sr-only">Toggle navigation</span>
+       					 <span class="icon-bar"></span>
+       					 <span class="icon-bar"></span>
+       					 <span class="icon-bar"></span>
+					</button>
+						<!--logo start-->
+						<a class="navbar-brand hidden-sm" href="#"><img alt="Brand" src="../../image/office/title.png" /></a>
+						<!--logo end-->
+					</div>
+					<div class="collapse navbar-collapse" id="top-nav">
+						<ul class=" topList nav navbar-nav">
+							<li>
+								<a href="resultShow.html"><img src="../../image/office/cgzs.png" />成果展示</a>
+							</li>
+							<li>
+								<a href="scienceMange.html"><img src="../../image/office/kygl.png" />科研管理</a>
+							</li>
+							<li>
+								<a class="active" href="archivesMange.html"><img src="../../image/office/dagl.png" />档案管理</a>
+							</li>
+							<li>
+								<a href="documentMange.html"><img src="../../image/office/wdgl.png" />文档管理</a>
+							</li>
+							<li>
+								<a href="authorityManage.html"><img src="../../image/office/qxgl.png" />权限管理</a>
+							</li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right ">
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle user" data-toggle="dropdown"><img src="../../image/office/user.png" /><span>管理员</span> <span class="caret"></span></a>
+								<ul class="dropdown-menu" role="menu">
+									<li>
+										<a href="login.html"><img src="../../image/office/exit.png" />退出</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<!--sidebar-start-->
+			<div class="collapse navbar-collapse hidden-xs">
+				<ul class="nav navbar-nav">
+					<li>
+						<div class="panel-group  sidebar" id="accordion">
+							<!--人员档案-->
+							<!--数据管理-->
+							<div class="panel ">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+			        					<a data-toggle="collapse" data-parent="#accordion" href="#ryda">
+			        						<img src="../../image/office/list/ryda.png">人员档案<i class="fa  fa-angle-down  fa-lg pull-right" aria-hidden="true"></i></a>
+			      					</h4>
+								</div>
+								<div id="ryda" class="panel-collapse collapse in">
+									<ul class="panel-body">
+										<li>
+											<a class="active" href="archivesMange.html">人员档案</a>
+										</li>
+										<li>
+											<a href="#">人员查询</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!--授权专利-->
+							<div class="panel ">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+			        					<a href="#">
+			        						<img src="../../image/office/list/sqzl.png">授权专利
+			        					</a>
+			     					 </h4>
+								</div>
+							</div>
+							<!--数据管理-->
+							<div class="panel ">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+			        					<a href="#yqda" data-toggle="collapse" data-parent="#accordion">
+			        					 <img src="../../image/office/list/yqda.png">仪器档案<i class="fa  fa-angle-down  fa-lg pull-right" aria-hidden="true"></i></a>
+			      					</h4>
+								</div>
+								<div id="yqda" class="panel-collapse collapse">
+									<ul class="panel-body">
+										<li>
+											<a href="#">仪器档案</a>
+										</li>
+										<li>
+											<a href="#">仪器档案基本情况</a>
+										</li>
+										<li>
+											<a href="#">仪器验收记录</a>
+										</li>
+										<li>
+											<a href="#">仪器安装调试记录</a>
+										</li>
+										<li>
+											<a href="#">仪器接受启用记录</a>
+										</li>
+										<li>
+											<a href="#">仪器维护程序与操作规程</a>
+										</li>
+										<li>
+											<a href="#">仪器维护记录表</a>
+										</li>
+										<li>
+											<a href="#">仪器设备维修记录</a>
+										</li>
+										<li>
+											<a href="#">仪器设备运行检查记录</a>
+										</li>
+										<li>
+											<a href="#">仪器设备功能检查报告</a>
+										</li>
+										<li>
+											<a href="#">购置仪器申请表</a>
+										</li>
+										<li>
+											<a href="#">计量器具鉴定、测试记录</a>
+										</li>
+										<li>
+											<a href="#">仪器设备报废申请表</a>
+										</li>
+										<li>
+											<a href="#">周期见顶、校准计划记录</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!--科研档案-->
+							<div class="panel ">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+			        					<a href="#">
+			        						<img src="../../image/office/list/kyda.png">科研档案
+			        					</a>
+			     					 </h4>
+								</div>
+							</div>
+							<!--读书资料档案-->
+							<div class="panel ">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+			        					<a href="#">
+			        						<img src="../../image/office/list/dszl.png">读书资料档案
+			        					</a>
+			     					 </h4>
+								</div>
+							</div>
+							<!--个人技术档案-->
+							<div class="panel ">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+			        					<a href="#">
+			        						<img src="../../image/office/list/grjs.png">个人技术档案
+			        					</a>
+			     					 </h4>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!--sidebar-end-->
+			<div id="right">
+				<div id="search">
+					<!--搜索条件-->
+					<div id="search" class="box">
+						<div class="search_box">
+							<form class="form-inline" role="form">
+								<div class="form-group">
+									<label for="name">姓名：</label>
+									<input type="text" class="form-control" id="name" placeholder="姓名">
+								</div>
+
+								<div class="form-group">
+									<label for="bm">部门：</label>
+									<input type="text" id="bm" class="form-control" placeholder="部门">
+								</div>
+								<div class="form-group">
+									<label for="xmbh">项目编号：</label>
+									<input type="text" id="xmbh" class="form-control" placeholder="项目编号">
+								</div>
+								<div class="form-group">
+									<button type="submit" class="btn btn-warning">搜 素</button>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="r-bottom box">
+						<!--增删改查按钮-->
+						<div id="operate">
+							<button type="button" title="添加" class="btn btn-info add" data-toggle="modal" data-target="#add"><i class="fa fa-fw fa-plus" aria-hidden="true"></i>添加</button>
+							<button type="button" class="btn btn-info add" title="修改" data-toggle="modal" data-target="#add"><i class="fa fa-fw fa-pencil" aria-hidden="true"></i>修改</button>
+							<button type="button" class="btn btn-info import" title="导出"><i class="fa fa-fw fa-download" aria-hidden="true"></i>导出</button>
+							<button type="button" class="btn btn-danger del" title="删除" data-toggle="modal" data-target="#del"><i class="fa fa-fw fa-trash" aria-hidden="true"></i>删除</button>
+						</div>
+						<!--数据表格-->
+						<!-- Nav tabs -->
+						<ul class="nav nav-tabs" role="tablist" id="myTab">
+							<li role="presentation">
+								<a href="#jbqk" role="tab" data-toggle="tab">基本情况</a>
+							</li>
+							<li role="presentation">
+								<a href="#ndkhjg" role="tab" data-toggle="tab">年度考核结果</a>
+							</li>
+							<li role="presentation">
+								<a href="#cjjxjy" role="tab" data-toggle="tab">参加继续教育</a>
+							</li>
+							<li role="presentation">
+								<a href="#xshy" role="tab" data-toggle="tab">学术会议</a>
+							</li>
+							<li role="presentation">
+								<a href="#kytg" role="tab" data-toggle="tab">科研推广和创造成果</a>
+							</li>
+							<li role="presentation">
+								<a href="#fblw" role="tab" data-toggle="tab">发表论文、重要技术报告</a>
+							</li>
+							<li role="presentation">
+								<a href="#hdzl" role="tab" data-toggle="tab">获得专利、标准</a>
+							</li>
+							<li role="presentation">
+								<a href="#hdgzjl" role="tab" data-toggle="tab">获得各种奖励和荣誉</a>
+							</li>
+						</ul>
+						<div class="tab-content">
+							<div role="tabpanel" class="tab-pane" id="jbqk">
+								<!--数据表格-->
+								<div id="toolbar">
+									<select class="selectpicker show-tick" data-width="160px" data-size="7">
+										<option value="all">选中行导出</option>
+										<option value="selected">全部导出</option>
+									</select>
+								</div>
+								<table id="table" data-toggle="table" data-show-export="true" data-toolbar="#toolbar" data-export-types="['excel']" data-show-columns="true" data-height="400" data-classes="table table-hover table-condensed" data-striped="true" data-sort-name="stargazers_count" data-sort-order="desc" data-url="">
+									<thead>
+										<tr>
+											<th data-field="state" data-checkbox="true"></th>
+											<th data-sortable="true">姓名</th>
+											<th data-sortable="true">出生年月</th>
+											<th data-sortable="true">性别</th>
+											<th data-sortable="true">籍贯</th>
+											<th data-sortable="true">身份证号</th>
+											<th data-sortable="true">政治面貌</th>
+											<th data-sortable="true">民族</th>
+											<th data-sortable="true">学位</th>
+											<th data-sortable="true">所学专业</th>
+											<th data-sortable="true">毕业院校</th>
+											<th data-sortable="true">毕业时间</th>
+											<th data-sortable="true">参加工作时间</th>
+											<th data-sortable="true">职称晋升简历</th>
+											<th data-sortable="true">现任职务</th>
+											<th data-sortable="true">聘任时间</th>
+											<th data-sortable="true">电子信箱</th>
+											<th data-sortable="true">联系电话</th>
+											<th data-sortable="true">发表论文</th>
+											<th data-sortable="true">获奖成果</th>
+											<th data-sortable="true">获奖专利</th>
+											<th data-sortable="true">参加/主持项目</th>
+											<th data-sortable="true">社会兼职</th>
+											<th data-sortable="true">荣誉称号</th>
+											<th data-sortable="true">各种证书上传</th>
+											<th data-sortable="true">其他</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td data-field="state" data-checkbox="true"></td>
+											<td>姓名</td>
+											<td>出生年月</td>
+											<td>性别</td>
+											<td>籍贯</td>
+											<td>身份证号</td>
+											<td>政治面貌</td>
+											<td>民族</td>
+											<td>学位</td>
+											<td>所学专业</td>
+											<td>毕业院校</td>
+											<td>毕业时间</td>
+											<td>参加工作时间</td>
+											<td>职称晋升简历</td>
+											<td>现任职务</td>
+											<td>聘任时间</td>
+											<td>电子信箱</td>
+											<td>联系电话</td>
+											<td>发表论文</td>
+											<td>获奖成果</td>
+											<td>获奖专利</td>
+											<td>参加/主持项目</td>
+											<td>社会兼职</td>
+											<td>荣誉称号</td>
+											<td>各种证书上传</td>
+											<td>其他</td>
+										</tr>
+										<tr>
+											<td data-field="state" data-checkbox="true"></td>
+											<td>姓名</td>
+											<td>出生年月</td>
+											<td>性别</td>
+											<td>籍贯</td>
+											<td>身份证号</td>
+											<td>政治面貌</td>
+											<td>民族</td>
+											<td>学位</td>
+											<td>所学专业</td>
+											<td>毕业院校</td>
+											<td>毕业时间</td>
+											<td>参加工作时间</td>
+											<td>职称晋升简历</td>
+											<td>现任职务</td>
+											<td>聘任时间</td>
+											<td>电子信箱</td>
+											<td>联系电话</td>
+											<td>发表论文</td>
+											<td>获奖成果</td>
+											<td>获奖专利</td>
+											<td>参加/主持项目</td>
+											<td>社会兼职</td>
+											<td>荣誉称号</td>
+											<td>各种证书上传</td>
+											<td>其他</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="ndkhjg">
+								<!--数据表格-->
+								<div id="toolbar1">
+									<select class="form-control">
+										<option value="all">全部导出</option>
+										<option value="selected">选中行导出</option>
+									</select>
+								</div>
+								<table data-toggle="table" data-show-export="true" data-toolbar="#toolbar1" data-export-types="['excel']" data-show-columns="true" data-height="400" data-classes="table table-hover table-condensed" data-striped="true" data-sort-name="stargazers_count" data-sort-order="desc" data-url="">
+									<thead>
+										<tr>
+											<th data-field="state" data-checkbox="true"></th>
+											<th data-sortable="true">姓名</th>
+											<th data-sortable="true">部门</th>
+											<th data-sortable="true">项目编号</th>
+											<th data-sortable="true">年度</th>
+											<th data-sortable="true">考核结果</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td data-field="state" data-checkbox="true"></td>
+											<td>姓名</td>
+											<td>部门</td>
+											<td>项目编号</td>
+											<td>年度</td>
+											<td>考核结果</td>
+										</tr>
+										<tr>
+											<td data-field="state" data-checkbox="true"></td>
+											<td>姓名</td>
+											<td>部门</td>
+											<td>项目编号</td>
+											<td>年度</td>
+											<td>考核结果</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="cjjxjy">
+								<!--数据表格-->
+								<div id="toolbar2">
+									<select class="form-control">
+										<option value="all">全部导出</option>
+										<option value="selected">选中行导出</option>
+									</select>
+								</div>
+								<table data-toggle="table" data-show-export="true" data-toolbar="#toolbar2" data-export-types="['excel']" data-show-columns="true" data-height="400" data-classes="table table-hover table-condensed" data-striped="true" data-sort-name="stargazers_count" data-sort-order="desc" data-url="">
+									<thead>
+										<tr>
+											<th data-field="state" data-checkbox="true"></th>
+											<th data-sortable="true">姓名</th>
+											<th data-sortable="true">部门</th>
+											<th data-sortable="true">项目编号</th>
+											<th data-sortable="true">起止时间</th>
+											<th data-sortable="true">主办单位</th>
+											<th data-sortable="true">学习内容及会议名称</th>
+											<th data-sortable="true">成绩或收获</th>
+											<th data-sortable="true">备注</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td data-field="state" data-checkbox="true"></td>
+											<td>姓名</td>
+											<td>部门</td>
+											<td>项目编号</td>
+											<td>起止时间</td>
+											<td>主办单位</td>
+											<td>学习内容及会议名称</td>
+											<td>成绩或收获</td>
+											<td>备注</td>
+										</tr>
+										<tr>
+											<td data-field="state" data-checkbox="true"></td>
+											<td>姓名</td>
+											<td>部门</td>
+											<td>项目编号</td>
+											<td>起止时间</td>
+											<td>主办单位</td>
+											<td>学习内容及会议名称</td>
+											<td>成绩或收获</td>
+											<td>备注</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="xshy">
+								<div id="toolbar3">
+									<select class="form-control">
+										<option value="all">全部导出</option>
+										<option value="selected">选中行导出</option>
+									</select>
+								</div>
+								<table data-toggle="table" data-show-export="true" data-toolbar="#toolbar3" data-export-types="['excel']" data-show-columns="true" data-height="400" data-classes="table table-hover table-condensed" data-striped="true" data-sort-name="stargazers_count" data-sort-order="desc" data-url="">
+									<thead>
+										<tr>
+											<th data-field="state" data-checkbox="true"></th>
+											<th data-sortable='true'>姓名</th>
+											<th data-sortable='true'>部门</th>
+											<th data-sortable='true'>项目编号</th>
+											<th data-sortable="true">时间</th>
+											<th data-sortable="true">地点</th>
+											<th data-sortable="true">主办单位</th>
+											<th data-sortable="true">学习内容及会议名称</th>
+											<th data-sortable="true">报告/墙报/论文</th>
+											<th data-sortable="true">备注</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td data-field="state" data-checkbox="true"></td>
+											<td>姓名</td>
+											<td>部门</td>
+											<td>项目编号</td>
+											<td>时间</td>
+											<td>地点</td>
+											<td>主办单位</td>
+											<td>学习内容及会议名称</td>
+											<td>报告/墙报/论文</td>
+											<td>备注</td>
+										</tr>
+										<tr>
+											<td data-field="state" data-checkbox="true"></td>
+											<td>姓名</td>
+											<td>部门</td>
+											<td>项目编号</td>
+											<td>时间</td>
+											<td>地点</td>
+											<td>主办单位</td>
+											<td>学习内容及会议名称</td>
+											<td>报告/墙报/论文</td>
+											<td>备注</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="kytg">
+								<div id="toolbar4">
+									<select class="form-control">
+										<option value="all">全部导出</option>
+										<option value="selected">选中行导出</option>
+									</select>
+								</div>
+								<table data-toggle="table" data-show-export="true" data-toolbar="#toolbar4" data-export-types="['excel']" data-show-columns="true" data-height="400" data-classes="table table-hover table-condensed" data-striped="true" data-sort-name="stargazers_count" data-sort-order="desc" data-url="">
+									<thead>
+										<tr class="header">
+											<th data-field="state" data-checkbox="true"></th>
+											<th data-sortable="true">姓名</th>
+											<th data-sortable="true">部门</th>
+											<th data-sortable="true">项目编号</th>
+											<th data-sortable="true">项目、成果名称及编号</th>
+											<th data-sortable="true">立项（鉴定验收）单位</th>
+											<th data-sortable="true">项目类别</th>
+											<th data-sortable="true">个人排名</th>
+											<th data-sortable="true">起止时间</th>
+											<th data-sortable="true">完成情况</th>
+
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td data-field="state" data-checkbox="true"></td>
+											<td>姓名</td>
+											<td>部门</td>
+											<td>项目编号</td>
+											<td>项目、成果名称及编号</td>
+											<td>立项（鉴定验收）单位</td>
+											<td>项目类别</td>
+											<td>个人排名</td>
+											<td>起止时间</td>
+											<td>完成情况</td>
+
+										</tr>
+										<tr>
+											<td data-field="state" data-checkbox="true"></td>
+											<td>姓名</td>
+											<td>部门</td>
+											<td>项目编号</td>
+											<td>项目、成果名称及编号</td>
+											<td>立项（鉴定验收）单位</td>
+											<td>项目类别</td>
+											<td>个人排名</td>
+											<td>起止时间</td>
+											<td>完成情况</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="fblw">
+								<div id="toolbar5">
+									<select class="form-control">
+										<option value="all">全部导出</option>
+										<option value="selected">选中行导出</option>
+									</select>
+								</div>
+								<table data-toggle="table" data-show-export="true" data-toolbar="#toolbar5" data-export-types="['excel']" data-show-columns="true" data-height="400" data-classes="table table-hover table-condensed" data-striped="true" data-sort-name="stargazers_count" data-sort-order="desc" data-url="">
+									<thead>
+										<tr>
+											<th data-field="state" data-checkbox="true"></th>
+											<th data-sortable="true">姓名</th>
+											<th data-sortable="true">部门</th>
+											<th data-sortable="true">项目编号</th>
+											<th data-sortable="true">作者</th>
+											<th data-sortable="true">论文题目</th>
+											<th data-sortable="true">登载期刊、出版或学术交流会名称</th>
+											<th data-sortable="true">发表时间及页码</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td data-field="state" data-checkbox="true"></td>
+											<td>姓名</td>
+											<td>部门</td>
+											<td>项目编号</td>
+											<td>作者</td>
+											<td>论文题目</td>
+											<td>登载期刊、出版或学术交流会名称</td>
+											<td>发表时间及页码</td>
+										</tr>
+										<tr>
+											<td data-field="state" data-checkbox="true"></td>
+
+											<td>姓名</td>
+											<td>部门</td>
+											<td>项目编号</td>
+											<td>作者</td>
+											<td>论文题目</td>
+											<td>登载期刊、出版或学术交流会名称</td>
+											<td>发表时间及页码</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="hdzl">
+								<div id="toolbar6">
+									<select class="form-control">
+										<option value="all">全部导出</option>
+										<option value="selected">选中行导出</option>
+									</select>
+								</div>
+								<table data-toggle="table" data-show-export="true" data-toolbar="#toolbar6" data-export-types="['excel']" data-show-columns="true" data-height="400" data-classes="table table-hover table-condensed" data-striped="true" data-sort-name="stargazers_count" data-sort-order="desc" data-url="">
+									<thead>
+										<tr class="header">
+											<th data-field="state" data-checkbox="true"></th>
+											<th data-sortable="true">姓名</th>
+											<th data-sortable="true">部门</th>
+											<th data-sortable="true">项目编号</th>
+											<th data-sortable="true">序号</th>
+											<th data-sortable="true">专利、标准名称</th>
+											<th data-sortable="true">证 号</th>
+											<th data-sortable="true">授予单位（日期）</th>
+											<th data-sortable="true">排名</th>
+											<th data-sortable="true">备注</th>
+
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td data-field="state" data-checkbox="true"></td>
+											<td>姓名</td>
+											<td>部门</td>
+											<td>项目编号</td>
+											<td>序号</td>
+											<td>专利、标准名称</td>
+											<td>证 号</td>
+											<td>授予单位（日期）</td>
+											<td>排名</td>
+											<td>备注</td>
+										</tr>
+										<tr>
+											<td data-field="state" data-checkbox="true"></td>
+											<td>姓名</td>
+											<td>部门</td>
+											<td>项目编号</td>
+											<td>序号</td>
+											<td>专利、标准名称</td>
+											<td>证 号</td>
+											<td>授予单位（日期）</td>
+											<td>排名</td>
+											<td>备注</td>
+										</tr>
+									</tbody>
+								</table>
+
+							</div>
+							<div role="tabpanel" class="tab-pane" id="hdgzjl">
+								<div id="toolbar7">
+									<select class="form-control">
+										<option value="all">全部导出</option>
+										<option value="selected">选中行导出</option>
+									</select>
+								</div>
+								<table data-toggle="table" data-show-export="true" data-toolbar="#toolbar7" data-export-types="['excel']" data-show-columns="true" data-height="400" data-classes="table table-hover table-condensed" data-striped="true" data-sort-name="stargazers_count" data-sort-order="desc" data-url="">
+									<thead>
+										<tr class="header">
+											<th data-field="state" data-checkbox="true"></th>
+											<th data-sortable="true">姓名</th>
+											<th data-sortable="true">部门</th>
+											<th data-sortable="true">项目编号</th>
+											<th data-sortable="true">序号</th>
+											<th data-sortable="true">奖励名称</th>
+											<th data-sortable="true">授予部门</th>
+											<th data-sortable="true">奖励级别</th>
+											<th data-sortable="true">授奖时间</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td data-field="state" data-checkbox="true"></td>
+											<td>姓名</td>
+											<td>部门</td>
+											<td>项目编号</td>
+											<td>序号</td>
+											<td>奖励名称</td>
+											<td>授予部门</td>
+											<td>奖励级别</td>
+											<td>授奖时间</td>
+										</tr>
+										<tr>
+											<td data-field="state" data-checkbox="true"></td>
+											<td>姓名</td>
+											<td>部门</td>
+											<td>项目编号</td>
+											<td>序号</td>
+											<td>奖励名称</td>
+											<td>授予部门</td>
+											<td>奖励级别</td>
+											<td>授奖时间</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<!--页码-->
+						<ul class="pagination">
+							<li>
+								<a href="#">&laquo;</a>
+							</li>
+							<li class="active">
+								<a href="#">1</a>
+							</li>
+							<li>
+								<a href="#">2</a>
+							</li>
+							<li>
+								<a href="#">3</a>
+							</li>
+							<li>
+								<a href="#">4</a>
+							</li>
+							<li>
+								<a href="#">...</a>
+							</li>
+							<li>
+								<a href="#">&raquo;</a>
+							</li>
+						</ul>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Add Modal -->
+		<div class="modal fade"  style="overflow: hidden;" data-backdrop="false" id="add" tabindex="-1" role="dialog" aria-labelledby="add" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h4 class="modal-title" id="addLabel">添加</h4>
+					</div>
+					<div class="modal-body">
+							<form>
+								<table data-toggle="table" data-height="330"  data-classes="table table-no-bordered" >
+									<thead>
+									<tr>
+										<th data-align="right"></th>
+										<th data-align="right"></th>
+										<th data-align="right"></th>
+										<th data-align="right"></th>
+									</tr>
+									</thead>
+									<tbody>
+									<tr>
+										<td><label>姓名：</label></td>
+										<td><input type="text" class="form-control"/></td>
+										<td><label>出生年月：</label></td>
+										<td><input type="text" class="form-control"/></td>
+									</tr>
+									<tr>
+										<td><label>性别：</label></td>
+										<td><input type="text" class="form-control"></td>
+										<td><label>籍贯：</label></td>
+										<td><input type="text" class="form-control"></td>
+									</tr>
+									<tr>
+										<td><label>身份证号：</label></td>
+										<td><input type="text" class="form-control"></td>
+										<td><label>政治面貌：</label></td>
+										<td><input type="text" class="form-control"></td>
+									</tr>
+									<tr>
+										<td><label>民族：</label></td>
+										<td><input type="text" class="form-control"></td>
+										<td><label>学位：</label></td>
+										<td><input type="text" class="form-control"></td>
+									</tr>
+									<tr>
+										<td><label>所学专业：</label></td>
+										<td><input type="text" class="form-control"></td>
+										<td><label>毕业院校：</label></td>
+										<td><input type="text" class="form-control"></td>
+									</tr>
+									<tr>
+										<td><label>毕业时间：</label></td>
+										<td><input type="text" class="form-control"></td>
+										<td><label>参加工作时间：</label></td>
+										<td><input type="text" class="form-control"></td>
+									</tr>
+									<tr>
+										<td><label>职称晋升简历：</label></td>
+										<td><input type="text" class="form-control"></td>
+										<td><label>现任职务：</label></td>
+										<td><input type="text" class="form-control"></td>
+									</tr>
+									<tr>
+										<td><label>聘任时间：</label></td>
+										<td><input type="text" class="form-control"></td>
+										<td><label>电子信箱：</label></td>
+										<td><input type="text" class="form-control"></td>
+									</tr>
+									<tr>
+										<td><label>联系电话：</label></td>
+										<td><input type="text" class="form-control"></td>
+										<td><label>电子信箱：</label></td>
+										<td><input type="text" class="form-control"></td>
+									</tr>
+									<tr>
+										<td><label>发表论文：</label></td>
+										<td><input type="text" class="form-control"></td>
+										<td><label>获奖成果：</label></td>
+										<td><input type="text" class="form-control"></td>
+									</tr>
+									<tr>
+										<td><label>获奖专利：</label></td>
+										<td><input type="text" class="form-control"></td>
+										<td><label>参加/主持会议：</label></td>
+										<td><input type="text" class="form-control"></td>
+									</tr>
+									<tr>
+										<td><label>社会兼职：</label></td>
+										<td><input type="text" class="form-control"></td>
+										<td><label>荣誉称号：</label></td>
+										<td><input type="text" class="form-control"></td>
+									</tr>
+									<tr>
+										<td><label>各种证书上传：</label></td>
+										<td><input type="text" class="form-control"></td>
+										<td><label>其他：</label></td>
+										<td><input type="text" class="form-control"></td>
+									</tr>
+								</table>
+							</form>
+					</div>
+					<div class="modal-footer ">
+						<button type="button " class="btn btn-default " data-dismiss="modal ">取消</button>
+						<button type="button " class="btn btn-primary ">保存</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Del Modal -->
+			<div class="modal fade" id="del" tabindex="-1" role="dialog" aria-labelledby="del" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+							<h4 class="modal-title" id="myModalLabel">提示</h4>
+						</div>
+						<div class="modal-body">
+							<h4>确定要删除吗？</h4>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">否</button>
+							<button type="button" class="btn btn-primary">是</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		<script src="../../bootstrap/js/jquery-ui.min.js "></script>
+		<!--模态框拖动-->
+		<script>
+			//模态框拖动
+			$(document).ready(function() {
+				$(".modal ").draggable({
+					handle: ".modal-header ",
+					cursor: 'move',
+				}); //为模态对话框添加拖拽
+				$(".modal ").css("overflow ", "hidden "); //禁止模态对话框的半透明背景滚动
+
+			});
+
+			$(function() {
+				$('#myTab a:first').tab('show')
+			})
+
+			var $table = $('#table');
+			$(function() {
+				$('#toolbar').find('select').change(function() {
+					$table.bootstrapTable('destroy').bootstrapTable({
+						exportDataType: $(this).val()
+					});
+				});
+			})
+		</script>
+	</body>
+
+</html>

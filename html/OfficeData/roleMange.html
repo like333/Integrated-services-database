@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>办公数据库</title>
+		<!--成果展示-->
+		<!-- Bootstrap CSS -->
+		<link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../../bootstrap/css/orange.css" rel="stylesheet">
+		<!-- Custom CSS -->
+		<link href="../../css/office/resultShow.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- Bootstrap CSS -->
+		<link href="../../bootstrap/css/bootstrap-table.css" media="all" rel="stylesheet" type="text/css" />
+		<link href="../../bootstrap/css/bootstrap-select.min.css" rel="stylesheet" />
+		<script src="../../bootstrap/js/jquery-3.1.1.min.js"></script>
+		<script src="../../bootstrap/js/bootstrap.min.js"></script>
+		<script src="../../bootstrap/js/bootstrap-table.js"></script>
+		<script src="../../bootstrap/js/bootstrap-select.min.js"></script>
+		<script src="../../bootstrap/js/icheck.js"></script>
+		<!--[if lt IE 9]>  
+            <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>  
+            <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>  
+        <![endif]-->
+	</head>
+	<body>
+		<div class="container-fluid">
+			<!--一级菜单-->
+			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-nav">
+						 <span class="sr-only">Toggle navigation</span>
+       					 <span class="icon-bar"></span>
+       					 <span class="icon-bar"></span>
+       					 <span class="icon-bar"></span>
+					</button>
+					<!--logo start-->
+					<a class="navbar-brand hidden-sm" href="#"><img alt="Brand" src="../../image/office/title.png" /></a>
+					<!--logo end-->
+				</div>
+				<div class="collapse navbar-collapse" id="top-nav">
+					<ul class="nav navbar-nav topList">
+						<li>
+							<a href="resultShow.html"><img src="../../image/office/cgzs.png" />成果展示</a>
+						</li>
+						<li>
+							<a href="scienceMange.html"><img src="../../image/office/kygl.png" />科研管理</a>
+						</li>
+						<li>
+							<a href="archivesMange.html"><img src="../../image/office/dagl.png" />档案管理</a>
+						</li>
+						<li>
+							<a href="documentMange.html"><img src="../../image/office/wdgl.png" />文档管理</a>
+						</li>
+						<li>
+							<a class="active" href="authorityManage.html"><img src="../../image/office/qxgl.png" />权限管理</a>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right ">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle user" data-toggle="dropdown"><img src="../../image/office/user.png" /><span>管理员</span> <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li>
+									<a href="login.html"><img src="../../image/office/exit.png" />退出</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<!--sidebar-start-->
+			<div class="collapse navbar-collapse hidden-xs">
+				<ul class="nav navbar-nav">
+					<li>
+						<div class="panel-group  sidebar" id="accordion">
+							<!--管理员权限管理-->
+							<div class="panel ">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+			       						 <a href="authorityManage.html">
+			       						 	<img src="../../image/office/list/list6.png">管理员权限管理
+			       						 </a>
+			      					</h4>
+								</div>
+							</div>
+							<!--员工权限管理-->
+							<div class="panel ">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+			        					<a href="#">
+			        						<img src="../../image/office/list/list1.png">员工权限管理
+			        					</a>
+			     					 </h4>
+								</div>
+							</div>
+							<!--角色管理-->
+							<div class="panel ">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+			        					<a  class="active"  href="roleMange.html">
+			        						<img src="../../image/office/list/list2.png">角色管理
+			        					</a>
+			     					 </h4>
+								</div>
+							</div>
+					</li>
+				</ul>
+				</div>
+			<!--sidebar-end-->
+
+			<!--right-->
+			<div id="right" class="box">
+				<!--数据表格-->
+				<div id="tb">
+					<div id="toolbar">
+						<form class="form" role="form">
+							<label>角色名称：</label>
+							<select class="selectpicker show-tick" data-size="7">
+								<option>系统管理员</option>
+								<option>用户管理员</option>
+								<option>用户</option>
+								<option>内部员工</option>
+								<option>开发人员</option>
+							</select>
+						</form>
+					</div>
+					<table data-toggle="table" data-toolbar="#toolbar" data-export-types="['excel']" data-show-columns="true" data-height="400" data-classes="table table-hover table-condensed" data-striped="true" data-sort-name="stargazers_count" data-sort-order="desc" data-url="">
+						<thead>
+							<tr>
+								<th data-field="state" data-checkbox="true"></th>
+								<th data-sortable="true">页面</th>
+								<th data-halign="center" data-align="center">添加</th>
+								<th data-halign="center" data-align="center">删除</th>
+								<th data-halign="center" data-align="center">修改</th>
+								<th data-halign="center" data-align="center">查看</th>
+								<th data-halign="center" data-align="center">导出</th>
+								<th data-halign="center" data-align="center">上传</th>
+								<th data-halign="center" data-align="center">下载</th>
+								<th data-halign="center" data-align="center">角色分配</th>
+								<th data-halign="center" data-align="center">权限分配</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td data-field="state" data-checkbox="true"></td>
+								<td>办公室成果展示</td>
+								<td><input class="chBox" type="checkbox"></td>
+								<td><input class="chBox" type="checkbox" checked></td>
+								<td><input class="chBox" type="checkbox"></td>
+								<td><input class="chBox" type="checkbox"></td>
+								<td><input class="chBox" type="checkbox" checked></td>
+								<td><input class="chBox" type="checkbox" disabled></td>
+								<td><input class="chBox" type="checkbox" disabled></td>
+								<td><input class="chBox" type="checkbox" disabled></td>
+								<td><input class="chBox" type="checkbox" disabled></td>
+							</tr>
+							<tr>
+								<td data-field="state" data-checkbox="true"></td>
+								<td>办公室科研管理数据</td>
+								<td><input class="chBox" type="checkbox"></td>
+								<td><input class="chBox" type="checkbox" checked></td>
+								<td><input class="chBox" type="checkbox"></td>
+								<td><input class="chBox" type="checkbox"></td>
+								<td><input class="chBox" type="checkbox" checked></td>
+								<td><input class="chBox" type="checkbox" disabled></td>
+								<td><input class="chBox" type="checkbox" disabled></td>
+								<td><input class="chBox" type="checkbox" disabled></td>
+								<td><input class="chBox" type="checkbox" disabled></td>
+							</tr>
+							<tr>
+								<td data-field="state" data-checkbox="true"></td>
+								<td>办公室文档文件管理</td>
+								<td><input class="chBox" type="checkbox" disabled></td>
+								<td><input class="chBox" type="checkbox" checked></td>
+								<td><input class="chBox" type="checkbox" disabled></td>
+								<td><input class="chBox" type="checkbox"></td>
+								<td><input class="chBox" type="checkbox" checked></td>
+								<td><input class="chBox" type="checkbox" checked></td>
+								<td><input class="chBox" type="checkbox" checked></td>
+								<td><input class="chBox" type="checkbox" disabled></td>
+								<td><input class="chBox" type="checkbox" disabled></td>
+							</tr>
+							<tr>
+								<td data-field="state" data-checkbox="true"></td>
+								<td>办公室文档图片管理</td>
+								<td><input class="chBox" type="checkbox" disabled></td>
+								<td><input class="chBox" type="checkbox" checked></td>
+								<td><input class="chBox" type="checkbox" disabled></td>
+								<td><input class="chBox" type="checkbox"></td>
+								<td><input class="chBox" type="checkbox" checked></td>
+								<td><input class="chBox" type="checkbox" checked></td>
+								<td><input class="chBox" type="checkbox" checked></td>
+								<td><input class="chBox" type="checkbox" disabled></td>
+								<td><input class="chBox" type="checkbox" disabled></td>
+							</tr>
+							<tr>
+								<td data-field="state" data-checkbox="true"></td>
+								<td>办公室文档视频管理</td>
+								<td><input class="chBox" type="checkbox" disabled></td>
+								<td><input class="chBox" type="checkbox" checked></td>
+								<td><input class="chBox" type="checkbox" disabled></td>
+								<td><input class="chBox" type="checkbox"></td>
+								<td><input class="chBox" type="checkbox" checked></td>
+								<td><input class="chBox" type="checkbox" checked></td>
+								<td><input class="chBox" type="checkbox" checked></td>
+								<td><input class="chBox" type="checkbox" disabled></td>
+								<td><input class="chBox" type="checkbox" disabled></td>
+							</tr>
+							<tr>
+								<td data-field="state" data-checkbox="true"></td>
+								<td>办公室用户管理</td>
+								<td><input class="chBox" type="checkbox" disabled></td>
+								<td><input class="chBox" type="checkbox" checked></td>
+								<td><input class="chBox" type="checkbox" disabled></td>
+								<td><input class="chBox" type="checkbox"></td>
+								<td><input class="chBox" type="checkbox" checked></td>
+								<td><input class="chBox" type="checkbox" disabled></td>
+								<td><input class="chBox" type="checkbox" disabled></td>
+								<td><input class="chBox" type="checkbox" checked></td>
+								<td><input class="chBox" type="checkbox" checked></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!--页码-->
+				<!--<div id="page">
+								<ul class="pager">
+									<li>每页显示<b>7</b>条，</li>
+									<li>共<b>2</b>页</li>
+									<li>|第<b>1</b>页</li>
+									<li><a href="#">首页</a></li>
+									<li><a href="#">上一页</a></li>
+									<li><a href="#">下一页</a></li>
+									<li><a href="#">尾页</a></li>
+									<li>跳转到
+										<input type="text" class=" jump-page" value="" /> 页
+									</li>
+									<li><a href="#">GO</a></li>
+								</ul>
+							</div>-->
+			</div>
+
+			<!-- Add Modal -->
+			<div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="add" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+							<h4 class="modal-title" id="addLabel">添加</h4>
+						</div>
+						<div class="modal-body">
+							<div class="modalBody">
+								<form class="form-horizontal" role="form">
+									<div class="form-group">
+										<label for="name" class="col-sm-3 control-label">成果名称</label>
+										<div class="col-sm-9">
+											<input type="text" class="form-control" id="name" placeholder="成果名称">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="wcr" class="col-sm-3 control-label">完成人</label>
+										<div class="col-sm-9">
+											<input type="text" class="form-control" id="wcr" placeholder="完成人">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="hjsj" class="col-sm-3 control-label">获奖时间</label>
+										<div class="col-sm-9">
+											<input type="date" class="form-control" id="hjsj">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="hjdj" class="col-sm-3 control-label">获奖等级</label>
+										<div class="col-sm-9">
+											<div class="btn-group">
+												<button type="button" class="btn btn-default">特等</button>
+												<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    										<span class="caret"></span>
+    										<span class="sr-only">Toggle Dropdown</span>
+  											</button>
+												<ul class="dropdown-menu" role="menu">
+													<li>
+														<a href="#">特等</a>
+													</li>
+													<li>
+														<a href="#">1等</a>
+													</li>
+													<li>
+														<a href="#">2等</a>
+													</li>
+													<li>
+														<a href="#">3等</a>
+													</li>
+												</ul>
+											</div>
+
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="cgjj" class="col-sm-3 control-label">成果简介</label>
+										<div class="col-sm-9">
+											<textarea class="form-control" rows="3" id="cgjj"></textarea>
+										</div>
+									</div>
+								</form>
+
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+							<button type="button" class="btn btn-primary">保存</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Del Modal -->
+			<div class="modal fade" id="del" tabindex="-1" role="dialog" aria-labelledby="del" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+							<h4 class="modal-title" id="myModalLabel">提示</h4>
+						</div>
+						<div class="modal-body">
+							<h4>确定要删除吗？</h4>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">否</button>
+							<button type="button" class="btn btn-primary">是</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script src="../../bootstrap/js/jquery-ui.min.js"></script><!--模态框拖动-->
+		
+		<script>
+		//模态框拖动
+				$(document).ready(function(){
+				        $(".modal").draggable({
+				        	handle:".modal-header",
+							cursor:'move',
+				        });//为模态对话框添加拖拽
+				        $(".modal").css("overflow", "hidden");//禁止模态对话框的半透明背景滚动
+				
+				})
+				$(function() {
+					var $table = $('#table');
+					$('#export').click(function() {
+						$table.tableExport({
+							type: 'excel',
+							escape: false
+						});
+					});
+
+					$('.chBox').iCheck({
+						checkboxClass: 'icheckbox_flat-orange',
+						radioClass: 'iradio_flat-orange'
+					});
+
+				});
+			</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>登录</title>
+		<link href="../css/start.css" rel="stylesheet">
+		<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<script src="../bootstrap/js/jquery-3.1.1.min.js"></script>
+		<script src="../bootstrap/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="user">
+			<img src="../image/lo/s_user.png" />
+			<!-- Split button -->
+			<div class="btn-group">
+			  <button type="button" class="btn btn-success">用户1</button>
+			  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			    <span class="caret"></span>
+			    <span class="sr-only">Toggle Dropdown</span>
+			  </button>
+			  <ul class="dropdown-menu">
+			    <li><a href="login.html">退出</a></li>
+			  </ul>
+			</div>
+		</div>
+		<div class="container">
+			<!--标题-->
+			<div class="title"></div>
+					<div class="box">
+						<ul class="clearfix">
+							<li class="box1"><a href="#">土壤室数据库</a></li>
+							<li class="box2"><a href="#">西北绿肥种质资源数据库</a></li>
+							<li class="box3"><a href="#">实验室数据库</a></li>
+							<li class="box4"><a href="#">长期定位试验数据库</a></li>
+							<li class="box5"><a href="OfficeData/resultShow.html">办公数据库</a></li>
+							<li class="box6"><a href="TestCenter/index.html">检测中心数据库</a></li>
+							<li class="box7"><a href="#">节水灌溉数据库</a></li>
+							<li class="box8"><a href="#">农业微生物菌种资源及应用数据库</a></li>
+							<li class="box9"><a href="#">新型肥料数据库</a></li>
+						</ul>
+					</div>
+			</div>
+		<div class="footer">
+			<p>版权所有：甘肃省农业科学院土壤肥料研究所     <a href="http://www.reebotoo.com.cn" target="_blank">技术支持：北京锐宇博图科技有限公司 </a> </p>
+		</div>
+		<!--鼠标移入移出-->
+		<script>
+			function adjust(){
+				var WHeight=window.innerHeight;
+				var oBox=document.getElementsByClassName('box')[0];
+				if(WHeight<900){
+					oBox.style.top='55%';
+				}
+				else{
+					oBox.style.top='';
+				}
+				if(WHeight<700){
+					document.body.style.minHeight='700px';
+				}
+				else{
+		 			document.body.style.minHeight='';
+				}
+			}
+			window.onload=function(){
+				adjust();
+				var oBox=document.getElementsByClassName('box');
+				var aLi=oBox[0].getElementsByTagName('li');
+				for(var i=0;i<aLi.length;i++){
+					aLi[i].onmouseover=function(){
+						this.style.border="3px white solid";
+					}
+					aLi[i].onmouseout=function(){
+						this.style.border="none";
+					}
+				}
+			}
+			window.onresize=adjust;
+		</script>
+	</body>
+</html>

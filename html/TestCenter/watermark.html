@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+
+	<head>
+		<meta charset="utf-8">
+		<script src="../../js/echarts.common.min.js"></script>
+		<script src="../../bootstrap/js/jquery-3.1.1.min.js"></script>
+		<link href="../../bootstrap/css/bootstrap-select.min.css" rel="stylesheet" />
+		<script src="../../bootstrap/js/bootstrap-select.min.js"></script>
+	</head>
+
+	<body style="height: 100%; margin: 0">
+		<div id="container" style="height: 100%"></div>
+		<script type="text/javascript">
+			var dom = document.getElementById("container");
+			var myChart = echarts.init(dom);
+			window.onresize = myChart.resize;
+			//var app = {};
+			option = null;
+			//app.title = '水印 - ECharts 下载统计'
+			var chartsJson = {
+				"兰州市": 323,
+				"嘉峪关市": 216,
+				"金昌市": 756,
+				"白银市": 777,
+				"天水市": 735,
+				"武威市": 240,
+				"张掖市": 184,
+				"酒泉市": 209,
+				"平凉市": 176,
+				"庆阳市": 159,
+				"定西市": 206,
+				"陇南市": 153,
+				"临夏回族自治州": 190,
+				"甘南藏族自治州": 210,
+			};
+			var componentsJson = {
+				"已完成订单": 28,
+				"已受理未完成": 55,
+				"已成交未受理": 40,
+				"等待付款": 46,
+			};
+			var downloadJson = {
+				"土壤样品检测数": 17365,
+				"水样检测数": 4079,
+				"植株样品检测数": 6929,
+				"肥料样品检测数": 14890
+			};
+			var themeJson = {
+				"1月": 194,
+				"2月": 95,
+				"3月": 108,
+				"4月": 71,
+				"5月": 279,
+				"6月": 182,
+				"7月": 194,
+				"8月": 95,
+				"9月": 108,
+				"10月": 71,
+				"11月": 179,
+				"12月": 182,
+			};
+			option = {
+				backgroundColor: "#ffffff",
+				tooltip: {},
+				title: [{
+					text: '订单地域分布',
+					subtext: '总计 ' + Object.keys(chartsJson).reduce(function(all, key) {
+						return all + chartsJson[key];
+					}, 0),
+					x: '25%',
+					textAlign: 'center'
+				}, {
+					text: '当天订单状态',
+					subtext: '总计 ' + Object.keys(componentsJson).reduce(function(all, key) {
+						return all + componentsJson[key];
+					}, 0),
+					x: '25%',
+					y: '52%',
+					textAlign: 'center'
+				}, {
+					text: '检测项目统计',
+					subtext: '总计 ' + Object.keys(downloadJson).reduce(function(all, key) {
+						return all + downloadJson[key];
+					}, 0),
+					x: '75%',
+					textAlign: 'center'
+				}, {
+					text: '年度检测数统计',
+					subtext: '总计 ' + Object.keys(themeJson).reduce(function(all, key) {
+						return all + themeJson[key];
+					}, 0),
+					x: '75%',
+					y: '52%',
+					textAlign: 'center'
+				}],
+				toolbox: {
+					feature: {
+						dataView: {
+							show: true,
+							readOnly: false
+						},
+						restore: {
+							show: true
+						},
+						saveAsImage: {
+							show: true
+						}
+					},
+				},
+
+				grid: [{
+					top: 50,
+					width: '50%',
+					bottom: '50%',
+					left: 10,
+					containLabel: true
+				}, {
+					top: '62%',
+					width: '50%',
+					bottom: 0,
+					left: 10,
+					containLabel: true
+				}],
+				yAxis: [{
+					type: 'value',
+					splitLine: {
+						show: false
+					}
+				}, {
+					gridIndex: 1,
+					type: 'value',
+					max: 'dataMax',
+					splitLine: {
+						show: false
+					}
+				}],
+				xAxis: [{
+					type: 'category',
+					max: 'dataMax',
+					data: Object.keys(chartsJson),
+					splitLine: {
+						show: false
+					}
+				}, {
+					type: 'category',
+					data: Object.keys(componentsJson),
+					gridIndex: 1,
+					splitLine: {
+						show: false
+					}
+				}],
+
+				series: [{
+					type: 'bar',
+					stack: 'chart',
+					z: 3,
+					label: {
+						normal: {
+							position: 'top',
+							show: true
+						}
+					},
+					data: Object.keys(chartsJson).map(function(key) {
+						return chartsJson[key];
+					})
+				}, {
+					type: 'bar',
+					stack: 'component',
+					xAxisIndex: 1,
+					yAxisIndex: 1,
+					z: 3,
+					label: {
+						normal: {
+							position: 'top',
+							show: true
+						}
+					},
+					data: Object.keys(componentsJson).map(function(key) {
+						return componentsJson[key];
+					})
+				}, 
+			 {
+					type: 'pie',
+					radius: [0, '30%'],
+					center: ['75%', '25%'],
+					data: Object.keys(downloadJson).map(function(key) {
+						return {
+							name: key.replace('.js', ''),
+							value: downloadJson[key]
+						}
+					})
+				}, {
+					type: 'pie',
+					radius: [0, '30%'],
+					center: ['75%', '80%'],
+					data: Object.keys(themeJson).map(function(key) {
+						return {
+							name: key.replace('.js', ''),
+							value: themeJson[key]
+						}
+					})
+				}]
+			};
+			if(option && typeof option === "object") {
+				myChart.setOption(option, true);
+			}
+		</script>
+	</body>
+
+</html>

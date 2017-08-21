@@ -1,0 +1,22 @@
+body {
+	font-family: "微软雅黑";
+}
+h3{margin-top:10px;}
+.top {
+	/*height: 36px;*/
+	/*line-height: 36px;*/
+	height: 60px;
+	line-height: 60px;
+	color: white;
+	background:#467cd4;
+	border-bottom: #ddd 1px solid;
+}
+.top span {
+	padding-right: 20px;
+	color:#FBED50;
+}
+.top p a{color:#fff;}
+.top p a:hover{cursor:pointer;}
+
+.title{border-bottom:6px #467cd4 solid;padding:10px 0;}
+.main{border:1px #ddd solid;}

@@ -1,0 +1,39 @@
+.chk{
+    display: none;
+}
+ 
+/*******STYLE 1*******/
+.chk + label {
+	background-color: #5d96ff;
+	border: 1px solid #2d61bf;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+	padding: 9px;
+	border-radius:10px;
+	display: inline-block;
+	position: absolute;
+	left: 3px;
+	top:3px;
+	margin-right: 30px;
+}
+.chk + label:active {
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+.chk:checked + label {
+	background-color: #5d96ff;
+	border: 1px solid #2d61bf;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+	color: #243441;
+}
+
+.chk:checked + label:after {
+	content: '\2714';
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	color: #fff;
+	width: 100%;
+	text-align: center;
+	font-size: 1em;
+	padding: 1px 0 0 0;
+	vertical-align: text-top;
+}

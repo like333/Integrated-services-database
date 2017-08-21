@@ -1,0 +1,9 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#title h1 {
+	background: url(../../../image/test/Testtitle1.png) no-repeat;
+	padding-left: 300px;
+}

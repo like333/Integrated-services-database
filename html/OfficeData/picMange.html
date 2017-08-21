@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>检测中心数据库</title>
+		<!--文件管理--图片管理-->
+		<!-- Bootstrap CSS -->
+		<link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="../../css/office/resultShow.css" rel="stylesheet">
+		<link href="../../css/TestCenter/checkbox.css" rel="stylesheet" />
+		<link href="../../bootstrap/css/bootstrap-table.css" media="all" rel="stylesheet" type="text/css" />
+		<script src="../../bootstrap/js/jquery-3.1.1.min.js"></script>
+		<script src="../../bootstrap/js/bootstrap.min.js"></script>
+		<script src="../../bootstrap/js/bootstrap-table.js"></script>
+		<!--[if lte IE 8]>
+			<link href="../../css/TestCenter/ie8.css" rel="stylesheet" type="text/css"/>
+		<![endif]-->
+
+		<!--[if lt IE 9]>  
+            <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>  
+            <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>  
+        <![endif]-->
+	</head>
+	<body style="background: white;">
+		<div class="container-fluid">
+		<!--一级菜单-->
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-nav">
+						 <span class="sr-only">Toggle navigation</span>
+       					 <span class="icon-bar"></span>
+       					 <span class="icon-bar"></span>
+       					 <span class="icon-bar"></span>
+					</button>
+					<!--logo start-->
+					<a class="navbar-brand hidden-sm" href="#"><img alt="Brand" src="../../image/office/title.png" /></a>
+					<!--logo end-->
+				</div>
+				<div class="collapse navbar-collapse" id="top-nav">
+					<ul class="nav navbar-nav topList">
+						<li>
+							<a href="resultShow.html"><img src="../../image/office/cgzs.png" />成果展示</a>
+						</li>
+						<li>
+							<a href="scienceMange.html"><img src="../../image/office/kygl.png" />科研管理</a>
+						</li>
+						<li>
+							<a href="archivesMange.html"><img src="../../image/office/dagl.png" />档案管理</a>
+						</li>
+						<li>
+							<a class="active" href="documentMange.html"><img src="../../image/office/wdgl.png" />文档管理</a>
+						</li>
+						<li>
+							<a href="authorityManage.html"><img src="../../image/office/qxgl.png" />权限管理</a>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right ">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle user" data-toggle="dropdown"><img src="../../image/office/user.png" /><span>管理员</span> <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li>
+									<a href="login.html"><img src="../../image/office/exit.png" />退出</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!--sidebar-start-->
+		<div class="collapse navbar-collapse hidden-xs">
+			<ul class="nav navbar-nav">
+				<li>
+					<div class="panel-group  sidebar" id="accordion">
+						<!--文档管理-->
+							<div class="panel ">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+			        					<a href="#wdgl" data-toggle="collapse" data-parent="#accordion">
+			        					 <img src="../../image/office/list/file.png">文档管理<i class="fa  fa-angle-down  fa-lg pull-right" aria-hidden="true"></i></a>
+			      					</h4>
+								</div>
+								<div id="wdgl" class="panel-collapse collapse">
+									<ul class="panel-body">
+										<li>
+											<a href="documentMange.html">成果展示文档</a>
+										</li>
+										<li>
+											<a href="#">科研管理文档</a>
+										</li>
+										<li>
+											<a href="#">档案管理</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!--文档管理-->
+						<!--图片管理-->
+						<div class="panel ">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+			        					<a  class="active" href="picMange.html">
+			        						<img src="../../image/office/list/pic.png">图片管理
+			        					</a>
+			     					 </h4>
+							</div>
+						</div>
+						<!--视频管理-->
+						<div class="panel ">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+			        					<a href="videoMange.html">
+			        						<img src="../../image/office/list/video.png">视频管理
+			        					</a>
+			     					 </h4>
+							</div>
+						</div>
+
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!--sidebar-end-->
+		<!--right-->
+		<div id="right" class="main">
+			<!--增删改查-->
+			<div class="row tool">
+				<div class="col-md-6 ">
+					<button type="button" title="上传文档" class="btn btn-primary add" data-toggle="modal" data-target="#add"><span class="fa fa-fw fa-upload"></span>上传文件</button>
+					<!--<a class="btn btn-info add" href="" title="添加" data-toggle="modal" data-target="#add"> <span class="glyphicon glyphicon-plus"></span></a>-->
+					<button type="button" class="btn btn-info import" title="下载"><span class="fa fa-fw fa-download"></span>下载文件</button>
+					<button type="button" class="btn btn-danger del" title="删除" data-toggle="modal" data-target="#del"><span class="glyphicon glyphicon-trash"></span>删除</button>
+				</div>
+				<div class="col-md-offset-3 col-md-3 col-xs-6">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="输入搜索内容" />
+						<span class="input-group-btn">
+									<button class="btn btn-success" type="button">搜索</button>
+								</span>
+					</div>
+				</div>
+			</div>
+			<!--全选-->
+			<div class="row">
+				<div class="checkAll col-md-12">
+					<div class="btn-group btn-group-sm">
+						<button type="button" class="btn btn-default" onclick="chkAll()"><i class="fa fa-check-square-o" aria-hidden="true"></i>全选</button>
+						<button type="button" class="btn btn-default" onclick="unChk()"><i class="fa fa-ban fa-fw" aria-hidden="true"></i>取消选择</button>
+						<button type="button" class="btn btn-default" onclick="otherChk()"><i class="fa fa-fw fa-check-square" aria-hidden="true"></i>反选</button>
+					</div>
+				</div>
+			</div>
+			<!--文件列表-->
+			<div class="row">
+				<div class="col-md-12">
+					<ul class="imglist">
+						<li>
+							<dl class="pic">
+								<dd class="imgcheck">
+									<input type="checkbox" id="checkbox_a1" class="chk" />
+									<label for="checkbox_a1"></label>
+								</dd>
+								<img src="../../image/test/1.png" />
+							</dl>
+							<h2><a href="#">软件界面设计下载</a></h2>
+							<p>
+								<a href="#">编辑</a>&nbsp;&nbsp;&nbsp;&nbsp;
+								<a href="#">删除</a>
+							</p>
+						</li>
+
+						<li>
+							<dl class="pic">
+								<dd class="imgcheck">
+									<input type="checkbox" id="checkbox_a2" class="chk" />
+									<label for="checkbox_a2"></label></dd>
+								<img src="../../image/test/2.jpg" /></dl>
+							<h2><a href="#">界面样式素材下载</a></h2>
+							<p>
+								<a href="#">编辑</a>&nbsp;&nbsp;&nbsp;&nbsp;
+								<a href="#">删除</a>
+							</p>
+						</li>
+
+						<li>
+							<dl class="pic">
+								<dd class="imgcheck">
+									<input type="checkbox" id="checkbox_a3" class="chk" />
+									<label for="checkbox_a3"></label>
+								</dd>
+								<img src="../../image/test/3.png" /></dl>
+							<h2><a href="#">弹出小窗口界面设计教程</a></h2>
+							<p>
+								<a href="#">编辑</a>&nbsp;&nbsp;&nbsp;&nbsp;
+								<a href="#">删除</a>
+							</p>
+						</li>
+
+						<li>
+							<dl class="pic">
+								<dd class="imgcheck">
+									<input type="checkbox" id="checkbox_a4" class="chk" />
+									<label for="checkbox_a4"></label></dd>
+								<img src="../../image/test/4.png" /></dl>
+							<h2><a href="#">羽毛图标设计教程</a></h2>
+							<p>
+								<a href="#">编辑</a>&nbsp;&nbsp;&nbsp;&nbsp;
+								<a href="#">删除</a>
+							</p>
+						</li>
+
+						<li>
+							<dl class="pic">
+								<dd class="imgcheck">
+									<input type="checkbox" id="checkbox_a5" class="chk" />
+									<label for="checkbox_a5"></label></dd>
+								<img src="../../image/test/1.png" /></dl>
+							<h2><a href="#">日历组件样式设计</a></h2>
+							<p>
+								<a href="#">编辑</a>&nbsp;&nbsp;&nbsp;&nbsp;
+								<a href="#">删除</a>
+							</p>
+						</li>
+
+						<li>
+							<dl class="pic">
+								<dd class="imgcheck">
+									<input type="checkbox" id="checkbox_a6" class="chk" />
+									<label for="checkbox_a6"></label></dd>
+								<img src="../../image/test/2.png" />
+							</dl>
+							<h2><a href="#">羽毛图标设计教程</a></h2>
+							<p>
+								<a href="#">编辑</a>&nbsp;&nbsp;&nbsp;&nbsp;
+								<a href="#">删除</a>
+							</p>
+						</li>
+
+						<li>
+							<dl class="pic">
+								<dd class="imgcheck">
+									<input type="checkbox" id="checkbox_a7" class="chk" />
+									<label for="checkbox_a7"></label></dd>
+								<img src="../../image/test/3.png" />
+							</dl>
+							<h2><a href="#">弹出小窗口界面设计教程</a></h2>
+							<p>
+								<a href="#">编辑</a>&nbsp;&nbsp;&nbsp;&nbsp;
+								<a href="#">删除</a>
+							</p>
+						</li>
+
+						<li>
+							<dl class="pic">
+								<dd class="imgcheck">
+									<input type="checkbox" id="checkbox_a8" class="chk" />
+									<label for="checkbox_a8"></label>
+								</dd>
+								<img src="../../image/test/4.png" />
+							</dl>
+							<h2><a href="#">弹出小窗口界面设计教程</a></h2>
+							<p>
+								<a href="#">编辑</a>&nbsp;&nbsp;&nbsp;&nbsp;
+								<a href="#">删除</a>
+							</p>
+						</li>
+
+						<li>
+							<dl class="pic">
+								<dd class="imgcheck">
+									<input type="checkbox" id="checkbox_a9" class="chk" />
+									<label for="checkbox_a9"></label>
+								</dd>
+								<img src="../../image/test/4.png" />
+							</dl>
+							<h2><a href="#">弹出小窗口界面设计教程</a></h2>
+							<p>
+								<a href="#">编辑</a>&nbsp;&nbsp;&nbsp;&nbsp;
+								<a href="#">删除</a>
+							</p>
+
+						</li>
+
+						<li>
+							<dl class="pic">
+								<dd class="imgcheck">
+									<input type="checkbox" id="checkbox_a10" class="chk" />
+									<label for="checkbox_a10"></label>
+								</dd>
+								<img src="../../image/test/1.png" />
+							</dl>
+							<h2><a href="#">软件界面设计下载</a></h2>
+							<p>
+								<a href="#">编辑</a>&nbsp;&nbsp;&nbsp;&nbsp;
+								<a href="#">删除</a>
+							</p>
+
+						</li>
+					</ul>
+
+				</div>
+			</div>
+			<!--分页-->
+			<div class="row">
+				<div class="col-md-12">
+					<ul class="pagination">
+						<li>
+							<a href="#">&laquo;</a>
+						</li>
+						<li class="active">
+							<a href="#">1</a>
+						</li>
+						<li class="disabled">
+							<a href="#">2</a>
+						</li>
+						<li>
+							<a href="#">3</a>
+						</li>
+						<li>
+							<a href="#">4</a>
+						</li>
+						<li>
+							<a href="#">5</a>
+						</li>
+						<li>
+							<a href="#">&raquo;</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--main-end-->
+		
+			</div>
+		<!--查看图片-->
+		<div id="viewImgBox">
+			<!--关闭按钮-->
+			<div id="closebox"></div>
+			<div id="viewImg">
+				<img src="../../image/test/1.png" />
+			</div>
+		</div>
+		<!--图片选择-->
+		<script type="text/javascript" src="../../js/picMange.js"></script>
+		<!-- Adt Modal -->
+		<div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="add" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h4 class="modal-title" id="addLabel">添加文件</h4>
+					</div>
+					<div class="modal-body">
+						<div class="modalBody">
+							<form class="form-horizontal" role="form">
+								<div class="form-group file-onload">
+									<label class="control-label">选择文件</label>
+									<input id="input-zh" type="file" multiple class="file" data-allowed-file-extensions='["doc", "txt","xls","pdf","docx","xlsx","ppt","pptx"]'> </div>
+							</form>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="sumit" class="btn btn-primary">上传</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Del Modal -->
+		<div class="modal fade" id="del" tabindex="-1" role="dialog" aria-labelledby="del" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h4 class="modal-title" id="myModalLabel">提示</h4>
+					</div>
+					<div class="modal-body">
+						<h4>确定要删除吗？</h4>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">否</button>
+						<button type="button" class="btn btn-primary">是</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../../bootstrap/js/jquery-ui.min.js"></script><!--模态框拖动-->
+		
+		<script>
+		//模态框拖动
+				$(document).ready(function(){
+				        $(".modal").draggable({
+				        	handle:".modal-header",
+							cursor:'move',
+				        });//为模态对话框添加拖拽
+				        $(".modal").css("overflow", "hidden");//禁止模态对话框的半透明背景滚动
+				
+				})
+			$("#input-zh").fileinput({
+				showUpload: false,
+				language: 'zh',
+				maxFileCount: 10,
+			});
+		</script>
+	</body>
+
+</html>

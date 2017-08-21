@@ -1,0 +1,6 @@
+/*modal style 弹出框样式*/
+.modal-dialog{}
+.modal{top:20%;}
+.modal .close span{color:black;font-size: 30px;}
+.modalBody{margin:10px 30px 40px;}
+.modal-header{color: white; border-radius:0;padding:10px;}
